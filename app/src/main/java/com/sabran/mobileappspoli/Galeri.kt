@@ -1,6 +1,7 @@
 package com.sabran.mobileappspoli
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,7 +14,7 @@ import com.sabran.mobileappspoli.model.GaleriModel
 import com.sabran.mobileappspoli.model.Mocklist
 
 class Galeri : AppCompatActivity() {
-    private lateinit var rv_Galeri : RecyclerView
+    private lateinit var rv_Galeri: RecyclerView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +23,13 @@ class Galeri : AppCompatActivity() {
         setContentView(R.layout.activity_galeri)
         rv_Galeri = findViewById(R.id.rv_Galeri)
 
-        rv_Galeri.layoutManager = GridLayoutManager(this, 1)
-        val adapter = GaleriAdapter(Mocklist.getModel() as ArrayList<GaleriModel>)
+        rv_Galeri.layoutManager = GridLayoutManager(this, 2)
+        val adapter = GaleriAdapter(Mocklist.getModel() as ArrayList<GaleriModel>) { item ->
+            // Saat item gambar diklik, pindah ke halaman detail dengan membawa gambar
+            val intent = Intent(this, PhotoDetails::class.java)
+            intent.putExtra("IMAGE_ID", item.gambar1) // Kirim resource id
+            startActivity(intent)
+        }
         rv_Galeri.adapter = adapter
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

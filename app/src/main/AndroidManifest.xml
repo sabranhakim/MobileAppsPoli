@@ -13,6 +13,12 @@
         android:theme="@style/Theme.MobileAppsPoli"
         tools:targetApi="31">
         <activity
+            android:name=".PhotoDetails"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRecycleGaleri"
+            android:exported="false" />
+        <activity
             android:name=".Galeri"
             android:exported="false" />
         <activity

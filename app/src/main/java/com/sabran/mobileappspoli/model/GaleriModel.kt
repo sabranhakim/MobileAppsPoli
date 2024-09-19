@@ -3,7 +3,7 @@ package com.sabran.mobileappspoli.model
 import com.sabran.mobileappspoli.R
 
 data class GaleriModel(
-    val gambar : Int,
+    val gambar1 : Int
 )
 object Mocklist {
     fun getModel() : List<GaleriModel> {
@@ -11,19 +11,19 @@ object Mocklist {
             R.drawable.galeri1,
         )
         val itemModel2 = GaleriModel(
-            R.drawable.galeri2
+            R.drawable.galeri2,
         )
         val itemModel3 = GaleriModel(
-            R.drawable.galeri3
+            R.drawable.galeri3,
         )
         val itemModel4 = GaleriModel(
-            R.drawable.galeri4
+            R.drawable.galeri4,
         )
         val itemModel5 = GaleriModel(
-            R.drawable.galeri5
+            R.drawable.galeri5,
         )
         val itemModel6 = GaleriModel(
-            R.drawable.galeri6
+            R.drawable.galeri6,
         )
 
         val itemList: ArrayList<GaleriModel> = ArrayList()
